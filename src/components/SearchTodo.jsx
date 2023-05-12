@@ -15,8 +15,11 @@ const SearchTodo = ({
   };
 
   const submitTodo = (e) => {
+    
     e.preventDefault();
-    if (inputValue !== "") {
+      if(inputValue === ""){
+        return
+      }
       setTodos([
         ...todos,
         {
@@ -26,9 +29,11 @@ const SearchTodo = ({
           id: Math.random() * 1000,
         },
       ]);
-    }
+    
     setInputValue("");
   };
+
+ 
 
   return (
     <SearchContainer>
@@ -40,7 +45,9 @@ const SearchTodo = ({
           onChange={addTodo}
           required
         />
-        <button type="submit">
+        <button 
+        onClick={submitTodo}
+        type="submit">
           <i>
             <img src={plus} alt="plus" />
           </i>
