@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import {
   Clock,
   ContainerStyle,
@@ -6,11 +7,12 @@ import {
   Day,
   Pm,
   ClockWrapper,
+  ClockDayWrapper
 } from "../styled-components/bgWithDate.styled";
 import backgroundImage from "../images/Background.png";
 
-export default function BackgroundWithDate() {
-  const [currentDate, setCurrentDate] = useState(new Date());
+export default function BackgroundWithDate({currentDate, setCurrentDate}) {
+  
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -25,14 +27,7 @@ export default function BackgroundWithDate() {
   const timeOptions = {
     hour: "numeric",
     minute: "numeric",
-    // hour12: true,
   };
-
-  // const options = {
-  //   weekday: "short",
-  //   day: "numeric",
-  //   month: "short",
-  // };
 
   function formatDate(date) {
     const dayOfMonth = date.getDate(); // Get the day of the month
@@ -42,14 +37,17 @@ export default function BackgroundWithDate() {
   return (
     <ContainerStyle>
       <BgImage>
-        <div>
+        <ClockDayWrapper>
           <Day>{formatDate(currentDate)}</Day>
           <ClockWrapper>
-            <Clock>{currentDate.toLocaleTimeString([], timeOptions)}</Clock>
+            <Clock>{currentDate.toLocaleTimeString([], timeOptions)} </Clock>
             <Pm>{currentDate.getHours() >= 12 ? "PM" : "AM"}</Pm>
           </ClockWrapper>
-        </div>
+        </ClockDayWrapper>
       </BgImage>
     </ContainerStyle>
+   
   );
+  
+  
 }

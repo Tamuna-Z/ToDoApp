@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import "typeface-russo-one";
 const GlobalStyled =createGlobalStyle`
 *{
     margin: 0;
@@ -11,6 +12,9 @@ body{
     align-items: center;
     background-color: #EBEFF2;
     font-family: 'Inter',sans-serif;
+  }
+  body {
+    font-family: "Russo One", sans-serif;
   }
   
 
