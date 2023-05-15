@@ -2,7 +2,7 @@ import "./App.css";
 import GlobalStyled from "./styled-components/Global.styled";
 import BackgroundWithDate from "./components/BackgroundWithDate";
 import SearchTodo from "./components/SearchTodo";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import TodoList from "./components/TodoList";
 
 function App() {

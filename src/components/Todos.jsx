@@ -1,8 +1,9 @@
 import React from "react";
+import {Heading,Clock,Circle, Active} from '../styled-components/Todo.styled';
 
 function Todos({ todos, setTodos, todo, delImage, todoText ,currentDate}) {
 
-  const active = () => {
+  const activate = () => {
     setTodos(
       todos.map((element) => {
         if (element.id === todo.id) {
@@ -12,18 +13,22 @@ function Todos({ todos, setTodos, todo, delImage, todoText ,currentDate}) {
       })
     );
   };
-console.log(todos);
+const deleteHandler=()=>{
+  setTodos(todos.filter((element)=> element.id !==todo.id));
+};
   return (
     <>
       <div>
-         <h1>{todoText}</h1>
-        <h1>Today at {currentDate.toLocaleString()} </h1>
+         <Heading>{todoText}</Heading>
+        <Clock>Today at {currentDate.toLocaleString()} </Clock>
       </div>
 
       <div>
-        <div onClick={active}></div>
-        <img src={delImage} alt="delete" />
+        <div onClick={activate} ></div>
+        <img src={delImage} alt="delete"  onClick={deleteHandler}/>
       </div>
+
+
     </>
   );
 }

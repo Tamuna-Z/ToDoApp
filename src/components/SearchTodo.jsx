@@ -1,25 +1,23 @@
 import React from "react";
-import { SearchContainer } from "../styled-components/SearchTodo.styled";
+import { SearchContainer,InputBox ,ButtonDiv,InputWrapper,VImg,VImgWrapper,InputBoxWrapper} from "../styled-components/SearchTodo.styled";
 import plus from "../images/plus.png";
+import vIcon from '../images/V.png';
 
 const SearchTodo = ({
   inputValue,
   setInputValue,
   todos,
   setTodos,
-  currentDate,
-  setCurrentDate,
+  currentDate
 }) => {
-  const addTodo = (e) => {
-    setInputValue(e.target.value);
-  };
+  function AddTodo (event){
+    setInputValue(event.target.value);
+  }
 
-  const submitTodo = (e) => {
+  function submitTodo (e) {
     
     e.preventDefault();
-      if(inputValue === ""){
-        return
-      }
+      if(inputValue !== ""){
       setTodos([
         ...todos,
         {
@@ -29,29 +27,34 @@ const SearchTodo = ({
           id: Math.random() * 1000,
         },
       ]);
+    }
     
     setInputValue("");
-  };
-
- 
+  }
 
   return (
     <SearchContainer>
       <form onSubmit={submitTodo}>
-        <input
+        <InputWrapper>
+       <InputBoxWrapper>
+       <InputBox
           placeholder="Note"
           type="text"
           value={inputValue}
-          onChange={addTodo}
+          onChange={AddTodo}
           required
         />
-        <button 
+        <VImgWrapper><VImg  src={vIcon}/></VImgWrapper>
+       </InputBoxWrapper>
+        
+        <ButtonDiv 
         onClick={submitTodo}
         type="submit">
           <i>
             <img src={plus} alt="plus" />
           </i>
-        </button>
+        </ButtonDiv>
+        </InputWrapper>
       </form>
     </SearchContainer>
   );

@@ -8,21 +8,21 @@ import {
   Pm,
   ClockWrapper,
   ClockDayWrapper
-} from "../styled-components/bgWithDate.styled";
+} from "../styled-components/BgWithDate.styled";
 import backgroundImage from "../images/Background.png";
 
 export default function BackgroundWithDate({currentDate, setCurrentDate}) {
   
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentDate(new Date());
-    }, 1000); // Update the date every second
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setCurrentDate(new Date());
+  //   }, 1000); // Update the date every second
 
-    return () => {
-      clearInterval(timer); // Clear the interval when the component unmounts
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(timer); // Clear the interval when the component unmounts
+  //   };
+  // }, []);
 
   const timeOptions = {
     hour: "numeric",
