@@ -1,23 +1,31 @@
 import React from "react";
-import { SearchContainer,InputBox ,ButtonDiv,InputWrapper,VImg,VImgWrapper,InputBoxWrapper} from "../styled-components/SearchTodo.styled";
+import {
+  SearchContainer,
+  InputBox,
+  ButtonDiv,
+  InputWrapper,
+  VImg,
+  VImgWrapper,
+  InputBoxWrapper,
+} from "../styled-components/SearchTodo.styled";
 import plus from "../images/plus.png";
-import vIcon from '../images/V.png';
+import vIcon from "../images/V.png";
+import TodoList from "../components/TodoList";
 
 const SearchTodo = ({
   inputValue,
   setInputValue,
   todos,
   setTodos,
-  currentDate
+  currentDate,
 }) => {
-  function AddTodo (event){
+  function AddTodo(event) {
     setInputValue(event.target.value);
   }
 
-  function submitTodo (e) {
-    
+  function submitTodo(e) {
     e.preventDefault();
-      if(inputValue !== ""){
+    if (inputValue !== "") {
       setTodos([
         ...todos,
         {
@@ -28,7 +36,7 @@ const SearchTodo = ({
         },
       ]);
     }
-    
+
     setInputValue("");
   }
 
@@ -36,26 +44,27 @@ const SearchTodo = ({
     <SearchContainer>
       <form onSubmit={submitTodo}>
         <InputWrapper>
-       <InputBoxWrapper>
-       <InputBox
-          placeholder="Note"
-          type="text"
-          value={inputValue}
-          onChange={AddTodo}
-          required
-        />
-        <VImgWrapper><VImg  src={vIcon}/></VImgWrapper>
-       </InputBoxWrapper>
-        
-        <ButtonDiv 
-        onClick={submitTodo}
-        type="submit">
-          <i>
-            <img src={plus} alt="plus" />
-          </i>
-        </ButtonDiv>
+          <InputBoxWrapper>
+            <VImgWrapper>
+              <VImg src={vIcon} />
+            </VImgWrapper>
+            <InputBox
+              placeholder="Note"
+              type="text"
+              value={inputValue}
+              onChange={AddTodo}
+              required
+            />
+          </InputBoxWrapper>
+
+          <ButtonDiv onClick={submitTodo} type="submit">
+            <i>
+              <img src={plus} alt="plus" />
+            </i>
+          </ButtonDiv>
         </InputWrapper>
       </form>
+      <TodoList todos={todos} setTodos={setTodos} currentDate={currentDate} />
     </SearchContainer>
   );
 };

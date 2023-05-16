@@ -24,12 +24,12 @@ function App() {
         currentDate={currentDate}
         setCurrentDate={setCurrentDate}
       />
-      <TodoList
+      {/* <TodoList
        inputValue={inputValue}
-       todos={todos}
+      
        setTodos={setTodos}
        currentDate={currentDate}
-      />
+      /> */}
     </>
   );
 }

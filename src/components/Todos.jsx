@@ -1,5 +1,5 @@
 import React from "react";
-import {Heading,Clock,Circle, Active} from '../styled-components/Todo.styled';
+import {Heading,Clock,Circle, Active,DeleteContainer,TodoContainer,DeleteImg} from '../styled-components/Todo.styled';
 
 function Todos({ todos, setTodos, todo, delImage, todoText ,currentDate}) {
 
@@ -18,15 +18,17 @@ const deleteHandler=()=>{
 };
   return (
     <>
-      <div>
+     <TodoContainer>
+     <div>
          <Heading>{todoText}</Heading>
         <Clock>Today at {currentDate.toLocaleString()} </Clock>
       </div>
 
-      <div>
-        <div onClick={activate} ></div>
-        <img src={delImage} alt="delete"  onClick={deleteHandler}/>
-      </div>
+      <DeleteContainer>
+        <Circle onClick={activate} ></Circle>
+        <DeleteImg src={delImage} alt="delete"  onClick={deleteHandler}/>
+      </DeleteContainer>
+     </TodoContainer>
 
 
     </>
