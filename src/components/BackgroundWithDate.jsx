@@ -8,7 +8,7 @@ import {
   Pm,
   ClockWrapper,
   ClockDayWrapper
-} from "../../src/styled-components/BgWithDate.styled";
+} from "../styled-components/BgWithDate.styled";
 import backgroundImage from "../images/Background.png";
 
 export default function BackgroundWithDate({currentDate, setCurrentDate}) {
