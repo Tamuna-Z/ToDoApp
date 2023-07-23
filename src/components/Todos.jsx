@@ -19,6 +19,9 @@ function Todos({
   currentDate,
   completed,
 }) {
+
+  const currentHour = currentDate.getHours();
+  const currentMinute = currentDate.getMinutes();
   const activate = () => {
     setTodos(
       todos.map((element) => {
@@ -39,7 +42,7 @@ function Todos({
       <TodoContainer>
         <div>
           <Heading>{todoText}</Heading>
-          <Clock>Today at {currentDate.toLocaleString()} </Clock>
+          <Clock><p>{ `Today at ${currentHour.toString().padStart(2, "0")}:${currentMinute.toString().padStart(2, "0")}`}</p></Clock>
         </div>
 
         <DeleteContainer>

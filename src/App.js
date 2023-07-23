@@ -24,12 +24,6 @@ function App() {
         currentDate={currentDate}
         setCurrentDate={setCurrentDate}
       />
-      {/* <TodoList
-       inputValue={inputValue}
-      
-       setTodos={setTodos}
-       currentDate={currentDate}
-      /> */}
     </>
   );
 }
