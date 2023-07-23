@@ -1,8 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 import "typeface-russo-one";
+import 'typeface-inter';
+// import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 const GlobalStyled =createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;

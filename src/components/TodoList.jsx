@@ -2,7 +2,7 @@ import React from "react";
 import delImage from "../images/delete.png";
 import Todos from "../components/Todos";
 
-function TodoList({ todos, setTodos, currentDate }) {
+function TodoList({ todos, setTodos, currentDate}) {
   return (
     <div>
       {todos.map((todo) => (
@@ -14,6 +14,7 @@ function TodoList({ todos, setTodos, currentDate }) {
           todos={todos}
           todo={todo}
           currentDate={currentDate}
+          completed={todo.completed}
         />
       ))}
     </div>
