@@ -3,7 +3,6 @@ import {
   Heading,
   Clock,
   Circle,
-  // Active,
   DeleteContainer,
   TodoContainer,
   DeleteImg,

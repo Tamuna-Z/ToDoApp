@@ -1,6 +1,6 @@
 import "./App.css";
 import GlobalStyled from "./styled-components/Global.styled";
-import BackgroundWithDate from "./components/BackgroundWithDate";
+// import BackgroundWithDate from "./components/BackgroundWithDate";
 import SearchTodo from "./components/SearchTodo";
 import { useState } from "react";
 
@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       <GlobalStyled />
-      <BackgroundWithDate
+      {/* <BackgroundWithDate
         currentDate={currentDate}
-      />
+      /> */}
       <SearchTodo
         inputValue={inputValue}
         setInputValue={setInputValue}
