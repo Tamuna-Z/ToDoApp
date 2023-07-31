@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 import {
   Clock,
@@ -9,9 +9,9 @@ import {
   ClockWrapper,
   ClockDayWrapper
 } from "../styled-components/BgWithDate.styled";
-import backgroundImage from "../images/Background.png";
+// import backgroundImage from "../images/Background.png";
 
-export default function BackgroundWithDate({currentDate, setCurrentDate}) {
+export default function BackgroundWithDate({currentDate}) {
   
   
 

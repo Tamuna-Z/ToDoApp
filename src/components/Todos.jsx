@@ -3,7 +3,7 @@ import {
   Heading,
   Clock,
   Circle,
-  Active,
+  // Active,
   DeleteContainer,
   TodoContainer,
   DeleteImg,
@@ -46,7 +46,7 @@ function Todos({
         </div>
 
         <DeleteContainer>
-          <Circle onClick={activate} completed={completed}>{completed && <img src={vIcon}  />}</Circle>
+          <Circle onClick={activate} completed={completed}>{completed && <img src={vIcon} alt="activeIcon" />}</Circle>
           <DeleteImg src={delImage} alt="delete" onClick={deleteHandler} />
         </DeleteContainer>
       </TodoContainer>
