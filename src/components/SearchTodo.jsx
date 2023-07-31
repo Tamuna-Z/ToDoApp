@@ -19,7 +19,8 @@ const SearchTodo = ({
   setTodos,
   currentDate,
 }) => {
-  function AddTodo(event) {
+
+  function addTodo(event) {
     setInputValue(event.target.value);
   }
 
@@ -52,7 +53,7 @@ const SearchTodo = ({
               placeholder="Note"
               type="text"
               value={inputValue}
-              onChange={AddTodo}
+              onChange={addTodo}
               required
             />
           </InputBoxWrapper>
